@@ -62,7 +62,7 @@ class Jira():
         self.load_testing()
             
     def load_opened_bugs(self):
-        self.opened_bugs = self.search(created=True, reporter="currentUser()", issue_type='Bug').json()["issues"]
+        self.opened_bugs = self.search(created=True, sprint=False, reporter="currentUser()", issue_type='Bug').json()["issues"]
 
     def load_done_tickets(self):
         self.done_tickets = self.search(status="Done", status_changed=True).json()["issues"]
