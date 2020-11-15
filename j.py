@@ -42,7 +42,7 @@ class Jira():
             while start.weekday() != 3:
                 start -= timedelta(days=1)
 
-        self.time_range = (start.strftime('%Y-%m-%d'), self.now.strftime('%Y-%m-%d'), )
+        self.time_range = (start.strftime('%Y-%m-%d'), (self.now + timedelta(days=1)).strftime('%Y-%m-%d'), )
 
     def get_active_sprint(self, board_id):
         res_agile_path = "/rest/agile/1.0"
