@@ -25,6 +25,7 @@ class StandUp():
             
     def report(self):
         print("----- {} -----".format("Getting your report ready"))
+        print()
         self.jira.load_issues()
         self.show_bugs()
         self.show_done()
